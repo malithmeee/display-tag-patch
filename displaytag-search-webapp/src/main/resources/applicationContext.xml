@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-autowire="byName"> <!-- Set default autowiring to byName so that beans are injected based on Name not by TYPE -->
+
+    <!-- Example of SAF2 action instantiated by Spring -->
+    <bean id="indexAction" class="com.bdot.web.IndexAction" scope="prototype">
+        <property name="users">
+            <list>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Bharat"/>
+                    <property name="lastName" value="Kumar"/>
+                    <property name="city" value="London"/>
+                </bean>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Software"/>
+                    <property name="lastName" value="Architect"/>
+                    <property name="city" value="Mumbai"/>
+                </bean>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Web"/>
+                    <property name="lastName" value="Developer"/>
+                    <property name="city" value="New york"/>
+                </bean>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Application"/>
+                    <property name="lastName" value="Tester"/>
+                    <property name="city" value="Frankfurt"/>
+                </bean>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Project"/>
+                    <property name="lastName" value="Manager"/>
+                    <property name="city" value="Shanghai"/>
+                </bean>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Business"/>
+                    <property name="lastName" value="Analyst"/>
+                    <property name="city" value="Tokyo"/>
+                </bean>
+                <bean class="com.bdot.domain.User">
+                    <property name="firstName" value="Cat"/>
+                    <property name="lastName" value="Walker"/>
+                    <property name="city" value="Paris"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Beans -->
+
+</beans>
+

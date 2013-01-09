@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>displaytag-search</artifactId>
+        <groupId>com.bdot</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>com.bdot</groupId>
+    <artifactId>displaytag-search-webapp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>displaytag-search-webapp</name>
+    <url>http://www.bkumar.co.uk</url>
+    <description>displaytag-search-webapp</description>
+
+    <properties>
+        <struts2.version>2.3.1.2</struts2.version>
+        <spring.version>3.1.1.RELEASE</spring.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>MavenUk</id>
+            <name>MavenUk</name>
+            <url>http://uk.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>MavenCtrl</id>
+            <name>MavenCtrl</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>apache.nexus</id>
+            <name>ASF Nexus Staging</name>
+            <url>https://repository.apache.org/content/groups/staging/</url>
+        </repository>
+        <repository>
+            <id>Apache</id>
+            <name>Apache</name>
+            <url>http://ftp.cica.es/mirrors/maven2</url>
+        </repository>
+        <repository>
+            <id>Jhlabs</id>
+            <name>Jhlabs</name>
+            <url>http://maven.jahia.org/maven2</url>
+        </repository>
+        <repository>
+            <id>JBoss</id>
+            <name>JBoss</name>
+            <url>http://repository.jboss.org/maven2</url>
+        </repository>
+        <repository>
+            <id>Codehaus</id>
+            <name>Codehaus</name>
+            <url>http://repository.codehaus.org</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- displaytag header patch -->
+        <dependency>
+            <groupId>com.bdot</groupId>
+            <artifactId>displaytag-header-patch</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
+        <!--  Struts 2 -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>${struts2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-sitemesh-plugin</artifactId>
+            <version>${struts2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>${struts2.version}</version>
+        </dependency>
+
+        <!-- Needed for struts 2.2.1 -->
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.8.0.GA</version>
+        </dependency>
+
+        <!-- Servlet & Jsp -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Jakarta Commons -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-discovery</groupId>
+            <artifactId>commons-discovery</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+        <!-- Spring framework -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- For Jdbc Transactions -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Spring framework - used for factory beans & stuff -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
+        <!-- Jstl -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>displaytag-search-webapp</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.0.0.pre5</version>
+                <configuration>
+                    <scanIntervalSeconds>2</scanIntervalSeconds>
+                    <contextPath>/</contextPath>
+                    <!-- fix - After running jetty if you try to modify CSS file and try to save it,
+                    Your IDE throws a weired warning and CSS changes do not reflect in the browser.
+                    This is because of the useFileMappedBuffer - TRUE setting in jetty configuration file.
+                    We will just set the flag to FALSE and point jetty to use our configuration file -->
+                    <webDefaultXml>src/main/etc/webdefault-jetty7.xml</webDefaultXml>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>9999</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <tmpDirectory>${project.build.directory}/work</tmpDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
